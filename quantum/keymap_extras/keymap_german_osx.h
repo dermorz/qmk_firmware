@@ -21,92 +21,92 @@
 // Alt gr
 
 // normal characters
-#define DE_OSX_Z KC_Y
-#define DE_OSX_Y KC_Z
+#define DO_Z KC_Y
+#define DO_Y KC_Z
 
-#define DE_OSX_A KC_A
-#define DE_OSX_B KC_B
-#define DE_OSX_C KC_C
-#define DE_OSX_D KC_D
-#define DE_OSX_E KC_E
-#define DE_OSX_F KC_F
-#define DE_OSX_G KC_G
-#define DE_OSX_H KC_H
-#define DE_OSX_I KC_I
-#define DE_OSX_J KC_J
-#define DE_OSX_K KC_K
-#define DE_OSX_L KC_L
-#define DE_OSX_M KC_M
-#define DE_OSX_N KC_N
-#define DE_OSX_O KC_O
-#define DE_OSX_P KC_P
-#define DE_OSX_Q KC_Q
-#define DE_OSX_R KC_R
-#define DE_OSX_S KC_S
-#define DE_OSX_T KC_T
-#define DE_OSX_U KC_U
-#define DE_OSX_V KC_V
-#define DE_OSX_W KC_W
-#define DE_OSX_X KC_X
+#define DO_A KC_A
+#define DO_B KC_B
+#define DO_C KC_C
+#define DO_D KC_D
+#define DO_E KC_E
+#define DO_F KC_F
+#define DO_G KC_G
+#define DO_H KC_H
+#define DO_I KC_I
+#define DO_J KC_J
+#define DO_K KC_K
+#define DO_L KC_L
+#define DO_M KC_M
+#define DO_N KC_N
+#define DO_O KC_O
+#define DO_P KC_P
+#define DO_Q KC_Q
+#define DO_R KC_R
+#define DO_S KC_S
+#define DO_T KC_T
+#define DO_U KC_U
+#define DO_V KC_V
+#define DO_W KC_W
+#define DO_X KC_X
 
-#define DE_OSX_0 KC_0
-#define DE_OSX_1 KC_1
-#define DE_OSX_2 KC_2
-#define DE_OSX_3 KC_3
-#define DE_OSX_4 KC_4
-#define DE_OSX_5 KC_5
-#define DE_OSX_6 KC_6
-#define DE_OSX_7 KC_7
-#define DE_OSX_8 KC_8
-#define DE_OSX_9 KC_9
+#define DO_0 KC_0
+#define DO_1 KC_1
+#define DO_2 KC_2
+#define DO_3 KC_3
+#define DO_4 KC_4
+#define DO_5 KC_5
+#define DO_6 KC_6
+#define DO_7 KC_7
+#define DO_8 KC_8
+#define DO_9 KC_9
 
-#define DE_OSX_DOT KC_DOT
-#define DE_OSX_COMM KC_COMM
+#define DO_DOT KC_DOT
+#define DO_COMM KC_COMM
 
-#define DE_OSX_SS KC_MINS
-#define DE_OSX_AE KC_QUOT
-#define DE_OSX_UE KC_LBRC
-#define DE_OSX_OE KC_SCLN
+#define DO_SS KC_MINS
+#define DO_AE KC_QUOT
+#define DO_UE KC_LBRC
+#define DO_OE KC_SCLN
 
-#define DE_OSX_CIRC KC_NUBS // accent circumflex ^ and ring °
-#define DE_OSX_ACUT KC_EQL // accent acute ´ and grave `
-#define DE_OSX_PLUS KC_RBRC // + and * and ~
-#define DE_OSX_HASH KC_BSLS // # and '
-#define DE_OSX_LESS KC_GRV // < and > and |
-#define DE_OSX_MINS KC_SLSH // - and _
+#define DO_CIRC KC_NUBS // accent circumflex ^ and ring °
+#define DO_ACUT KC_EQL // accent acute ´ and grave `
+#define DO_PLUS KC_RBRC // + and * and ~
+#define DO_HASH KC_BSLS // # and '
+#define DO_LESS KC_GRV // < and > and |
+#define DO_MINS KC_SLSH // - and _
 
 // shifted characters
-#define DE_OSX_RING LSFT(DE_OSX_CIRC) // °
-#define DE_OSX_EXLM LSFT(KC_1) // !
-#define DE_OSX_DQOT LSFT(KC_2) // "
-#define DE_OSX_PARA LSFT(KC_3) // §
-#define DE_OSX_DLR  LSFT(KC_4) // $
-#define DE_OSX_PERC LSFT(KC_5) // %
-#define DE_OSX_AMPR LSFT(KC_6) // &
-#define DE_OSX_SLSH LSFT(KC_7) // /
-#define DE_OSX_LPRN LSFT(KC_8) // (
-#define DE_OSX_RPRN LSFT(KC_9) // )
-#define DE_OSX_EQL  LSFT(KC_0) // =
-#define DE_OSX_QST  LSFT(DE_OSX_SS) // ?
-#define DE_OSX_GRV  LSFT(DE_OSX_ACUT) // `
-#define DE_OSX_ASTR LSFT(DE_OSX_PLUS) // *
-#define DE_OSX_QUOT LSFT(DE_OSX_HASH) // '
-#define DE_OSX_MORE LSFT(DE_OSX_LESS) // >
-#define DE_OSX_COLN LSFT(KC_DOT) // :
-#define DE_OSX_SCLN LSFT(KC_COMM) // ;
-#define DE_OSX_UNDS LSFT(DE_OSX_MINS) // _
+#define DO_RING LSFT(DO_CIRC) // °
+#define DO_EXLM LSFT(KC_1) // !
+#define DO_DQOT LSFT(KC_2) // "
+#define DO_PARA LSFT(KC_3) // §
+#define DO_DLR  LSFT(KC_4) // $
+#define DO_PERC LSFT(KC_5) // %
+#define DO_AMPR LSFT(KC_6) // &
+#define DO_SLSH LSFT(KC_7) // /
+#define DO_LPRN LSFT(KC_8) // (
+#define DO_RPRN LSFT(KC_9) // )
+#define DO_EQL  LSFT(KC_0) // =
+#define DO_QST  LSFT(DO_SS) // ?
+#define DO_GRV  LSFT(DO_ACUT) // `
+#define DO_ASTR LSFT(DO_PLUS) // *
+#define DO_QUOT LSFT(DO_HASH) // '
+#define DO_MORE LSFT(DO_LESS) // >
+#define DO_COLN LSFT(KC_DOT) // :
+#define DO_SCLN LSFT(KC_COMM) // ;
+#define DO_UNDS LSFT(DO_MINS) // _
 
 // Alt-ed characters
-//#define DE_OSX_SQ2 LALT(KC_2) // ²
-//#define DE_OSX_SQ3 LALT(KC_3) // ³
-#define DE_OSX_LCBR LALT(KC_8) // {
-#define DE_OSX_LBRC LALT(KC_5) // [
-#define DE_OSX_RBRC LALT(KC_6) // ]
-#define DE_OSX_RCBR LALT(KC_9) // }
-#define DE_OSX_BSLS LALT(LSFT(KC_7)) // backslash
-#define DE_OSX_AT  LALT(DE_OSX_L) // @
-#define DE_OSX_EURO LALT(KC_E) // €
-#define DE_OSX_TILD LALT(DE_OSX_N) // ~
-#define DE_OSX_PIPE LALT(DE_OSX_7) // |
+//#define DO_SQ2 LALT(KC_2) // ²
+//#define DO_SQ3 LALT(KC_3) // ³
+#define DO_LCBR LALT(KC_8) // {
+#define DO_LBRC LALT(KC_5) // [
+#define DO_RBRC LALT(KC_6) // ]
+#define DO_RCBR LALT(KC_9) // }
+#define DO_BSLS LALT(LSFT(KC_7)) // backslash
+#define DO_AT  LALT(DO_L) // @
+#define DO_EURO LALT(KC_E) // €
+#define DO_TILD LALT(DO_N) // ~
+#define DO_PIPE LALT(DO_7) // |
 
 #endif
