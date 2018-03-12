@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {DO_1,    DO_2,    DO_3,    DO_4,    DO_5,  DO_6,   DO_7,  DO_8,   DO_9,    DO_0,    DO_SS,   KC_BSPC},
   {KC_TAB,  DO_Q,    DO_W,    DO_E,    DO_R,  DO_T,   DO_Z,  DO_U,   DO_I,    DO_O,    DO_P,    KC_DEL},
   {KC_ESC,  DO_A,    DO_S,    DO_D,    DO_F,  DO_G,   DO_H,  DO_J,   DO_K,    DO_L,    DO_OE,   DO_AE},
-  {KC_LSFT, DO_LESS, DO_Z,    DO_X,    DO_C,  DO_V,   DO_B,  DO_N,   DO_M,    DO_COMM, DO_DOT,  DO_MINS },
+  {KC_LSFT, DO_LESS, DO_Y,    DO_X,    DO_C,  DO_V,   DO_B,  DO_N,   DO_M,    DO_COMM, DO_DOT,  DO_MINS },
   {DO_CIRC, KC_LCTL, KC_LALT, KC_LGUI, LOWER, KC_ENT, KC_SPC, RAISE, DO_ACUT, DO_MINS, DO_PLUS, DO_HASH}
 },
 
