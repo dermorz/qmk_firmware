@@ -20,6 +20,9 @@ enum preonic_keycodes {
   BACKLIT
 };
 
+#define DO_ALF LALT(KC_SPACE)
+#define DO_LOCK LALT(LGUI(KC_POWER))
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* QWERTZ (mac)
