@@ -20,9 +20,21 @@ enum preonic_keycodes {
   BACKLIT
 };
 
-#define DO_ALF LALT(KC_SPACE)
 #define DO_LOCK LALT(LGUI(KC_POWER))
+#define DO_SHOT LSFT(LGUI(LCTL(DO_4)))
 #define DO_GRAV LSFT(DO_ACUT)
+
+//Tap Dance Declarations
+enum {
+  TD_SS_LCK = 0
+};
+
+//Tap Dance Definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+  //Tap once for screenshot, twice to Lock mac
+  [TD_SS_LCK]  = ACTION_TAP_DANCE_DOUBLE(DO_SHOT, DO_LOCK)
+// Other declarations would go here, separated by commas, if you have them
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -36,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   <  |   Y  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |  -   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |   ^  | Ctrl | GUI  | Alt  |Lower |Space |Space |Raise |  Alt |  Alf |   +  | Lock |
+ * |   ^  | Ctrl | GUI  | Alt  |Lower |Space |Space |Raise |  Alt |  GUI |   +  |SS/LCK|
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTZ] = {
@@ -44,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {KC_TAB,  DO_Q,    DO_W,    DO_E,    DO_R,  DO_T,   DO_Z,  DO_U,   DO_I,    DO_O,    DO_P,    KC_DEL},
   {KC_ESC,  DO_A,    DO_S,    DO_D,    DO_F,  DO_G,   DO_H,  DO_J,   DO_K,    DO_L,    DO_HASH, KC_ENT},
   {KC_LSFT, DO_LESS, DO_Y,    DO_X,    DO_C,  DO_V,   DO_B,  DO_N,   DO_M,    DO_COMM, DO_DOT,  DO_MINS },
-  {DO_CIRC, KC_LCTL, KC_LGUI, KC_LALT, LOWER, KC_SPC, KC_SPC, RAISE, KC_LALT, DO_ALF, DO_PLUS, DO_LOCK}
+  {DO_CIRC, KC_LCTL, KC_LGUI, KC_LALT, LOWER, KC_SPC, KC_SPC, RAISE, KC_LALT, KC_RGUI, DO_PLUS, TD(TD_SS_LCK)}
 },
 
 /* Lower
