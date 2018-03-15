@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   <  |   Y  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |  -   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |   ^  | Ctrl | GUI  | Alt  |Lower |Enter |Space |Raise |  Alt |  Alf |   +  | Lock |
+ * |   ^  | Ctrl | GUI  | Alt  |Lower |Space |Space |Raise |  Alt |  Alf |   +  | Lock |
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTZ] = {
@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {KC_TAB,  DO_Q,    DO_W,    DO_E,    DO_R,  DO_T,   DO_Z,  DO_U,   DO_I,    DO_O,    DO_P,    KC_DEL},
   {KC_ESC,  DO_A,    DO_S,    DO_D,    DO_F,  DO_G,   DO_H,  DO_J,   DO_K,    DO_L,    DO_HASH, KC_ENT},
   {KC_LSFT, DO_LESS, DO_Y,    DO_X,    DO_C,  DO_V,   DO_B,  DO_N,   DO_M,    DO_COMM, DO_DOT,  DO_MINS },
-  {DO_CIRC, KC_LCTL, KC_LGUI, KC_LALT, LOWER, KC_ENT, KC_SPC, RAISE, KC_LALT, DO_ALF, DO_PLUS, DO_LOCK}
+  {DO_CIRC, KC_LCTL, KC_LGUI, KC_LALT, LOWER, KC_SPC, KC_SPC, RAISE, KC_LALT, DO_ALF, DO_PLUS, DO_LOCK}
 },
 
 /* Lower
