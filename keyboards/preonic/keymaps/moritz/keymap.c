@@ -20,7 +20,7 @@ enum preonic_keycodes {
   BACKLIT
 };
 
-#define DO_LOCK LALT(LGUI(KC_POWER))
+#define DO_LOCK LALT(LGUI(LCTL(DO_S)))
 #define DO_SHOT LSFT(LGUI(LCTL(DO_4)))
 #define DO_GRAV LSFT(DO_ACUT)
 
