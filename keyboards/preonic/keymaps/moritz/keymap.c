@@ -15,7 +15,6 @@ enum preonic_keycodes {
   LOWER,
   RAISE,
   NUM,
-  BACKLIT
 };
 
 #define DO_LOCK LALT(LGUI(LCTL(DO_S)))
@@ -177,19 +176,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             layer_on(_NUM);
           } else {
             layer_off(_NUM);
-          }
-          return false;
-          break;
-        case BACKLIT:
-          if (record->event.pressed) {
-            register_code(KC_RSFT);
-            #ifdef BACKLIGHT_ENABLE
-              backlight_step();
-            #endif
-            PORTE &= ~(1<<6);
-          } else {
-            unregister_code(KC_RSFT);
-            PORTE |= (1<<6);
           }
           return false;
           break;
