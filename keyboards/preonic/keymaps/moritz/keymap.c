@@ -17,7 +17,7 @@ enum preonic_keycodes {
   NUM,
 };
 
-#define DO_LOCK LALT(LGUI(LCTL(DO_S)))
+#define DO_LOCK LSFT(LALT(LGUI(LCTL(DO_S))))
 #define DO_SHOT LSFT(LGUI(LCTL(DO_4)))
 #define DO_GRAV LSFT(DO_ACUT)
 
