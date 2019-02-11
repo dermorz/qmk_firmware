@@ -20,9 +20,22 @@ enum custom_keycodes {
 #define _______ KC_TRNS
 #define KC_ KC_TRNS
 
+// redefinitions for LAYOUT_kc
 #define KC_LESS KC_GRV // < >
 #undef KC_HASH
 #define KC_HASH KC_BSLS
+#undef KC_AT
+#define KC_AT LALT(KC_L)
+#undef KC_EQL
+#define KC_EQL LSFT(KC_0)
+#define KC_AE KC_QUOT
+#define KC_OE KC_SCLN
+#define KC_UE KC_LBRC
+#define KC_SZ KC_MINS
+#define KC_EURO LALT(KC_E)
+#define KC_QST LSFT(KC_SZ)
+#define KC_SEMI LSFT(KC_COMMA)
+#define KC_COL LSFT(KC_DOT)
 
 #define KC_SHOT LSFT(LGUI(LCTL(KC_4)))
 #define KC_SSVR LSFT(LGUI(LCTL(LALT(KC_S))))
@@ -58,6 +71,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      LSFT,LESS, Z  , X  , C  , V  ,      B  , N  , M  ,    ,NUM ,DEL ,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
      NUM ,LCTL,LALT,LGUI,LOWR,SPC ,     SPC ,RASE,LALT,RGUI,    ,SSSH
+  //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
+  //
+  ),
+
+  [_LOWER] = LAYOUT_kc_ortho_4x12(
+  //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
+         ,AT  ,EQL ,EURO,EXLM,CIRC,         ,UE  ,    ,OE  ,    ,    ,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+         ,AE  ,SZ  ,QST ,DOT ,COL ,     LEFT,DOWN, UP ,RIGHT,   ,    ,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+         ,    ,    ,    ,COMM,SEMI,         ,    ,    ,    ,    ,    ,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+         ,    ,    ,    ,    ,    ,     SPC ,    ,    ,    ,    ,
   //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
   //
   ),
