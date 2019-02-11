@@ -134,39 +134,39 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-    case RAISE:
-      if (record->event.pressed) {
-        layer_on(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      } else {
-        layer_off(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      }
-      return false;
-      break;
-    case NUM:
-      if (record->event.pressed) {
-        layer_on(_NUM);
-      } else {
-        layer_off(_NUM);
-      }
-      return false;
-      break;
-    case ADJUST:
-      if (record->event.pressed) {
-        layer_on(_ADJUST);
-      } else {
-        layer_off(_ADJUST);
-      }
-      return false;
-      break;
-/*    case RGB_MODE_DISCO:
-      if (record->event.pressed) {
-        //rgblight_enable();
-        rgblight_mode(RGBLIGHT_MODE_DISCO);
-        //rgblight_disable();
-      }
-    return false;*/
+    /* case RAISE: */
+    /*   if (record->event.pressed) { */
+    /*     layer_on(_RAISE); */
+    /*     update_tri_layer(_LOWER, _RAISE, _ADJUST); */
+    /*   } else { */
+    /*     layer_off(_RAISE); */
+    /*     update_tri_layer(_LOWER, _RAISE, _ADJUST); */
+    /*   } */
+    /*   return false; */
+    /*   break; */
+    /* case NUM: */
+    /*   if (record->event.pressed) { */
+    /*     layer_on(_NUM); */
+    /*   } else { */
+    /*     layer_off(_NUM); */
+    /*   } */
+    /*   return false; */
+    /*   break; */
+    /* case ADJUST: */
+    /*   if (record->event.pressed) { */
+    /*     layer_on(_ADJUST); */
+    /*   } else { */
+    /*     layer_off(_ADJUST); */
+    /*   } */
+    /*   return false; */
+    /*   break; */
+    /* case RGB_MODE_DISCO: */
+    /*   if (record->event.pressed) { */
+    /*     //rgblight_enable(); */
+    /*     rgblight_mode(RGBLIGHT_MODE_DISCO); */
+    /*     //rgblight_disable(); */
+    /*   } */
+    return false;
     case KC_A ... KC_SLASH:
       if (record->event.pressed) {
       /* if (rgblight_get_mode() == RGBLIGHT_MODE_DISCO) { */
