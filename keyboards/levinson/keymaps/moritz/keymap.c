@@ -15,6 +15,7 @@ enum custom_keycodes {
   RAISE,
   NUM,
   ADJUST,
+  RGB_MODE_DISCO,
 };
 
 #define _______ KC_TRNS
@@ -47,6 +48,11 @@ enum custom_keycodes {
 #define KC_BL_T BL_TOGG
 #define KC_RMOD RGB_MOD
 
+#define KC_KITT RGB_MODE_KNIGHT
+#define KC_DSCO RGB_MODE_DISCO
+#define KC_CYCL RGB_MOD
+#define KC_RGB RGB_TOG
+
 //Tap Dance Declarations
 enum {
   TD_SCREENSHOT_SCREENSAVER = 0
@@ -77,17 +83,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT_kc_ortho_4x12(
   //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
-         ,AT  ,EQL ,EURO,EXLM,CIRC,         ,UE  ,    ,OE  ,    ,    ,
+     KITT,AT  ,EQL ,EURO,EXLM,CIRC,         ,UE  ,    ,OE  ,    ,    ,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-         ,AE  ,SZ  ,QST ,DOT ,COL ,     LEFT,DOWN, UP ,RIGHT,   ,    ,
+     CYCL,AE  ,SZ  ,QST ,DOT ,COL ,     LEFT,DOWN, UP ,RIGHT,   ,    ,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-         ,    ,    ,    ,COMM,SEMI,         ,    ,    ,    ,    ,    ,
+     DSCO,    ,    ,    ,COMM,SEMI,         ,    ,    ,    ,    ,    ,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-         ,    ,    ,    ,    ,    ,     SPC ,    ,    ,    ,    ,
+     RGB ,    ,    ,    ,    ,    ,     SPC ,    ,    ,    ,    ,
   //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
   //
   ),
 
+};
+
+void rgblight_randomrgb_at(uint8_t index) {
+  uint8_t r, g, b;
+  r = random() % 0xFF;
+  g = random() % 0xFF;
+  b = random() % 0xFF;
+  rgblight_setrgb_at(r, g, b, index);
+};
+
+void rgblight_randomrgb(void) {
+  uint8_t on;
+  on = random() % RGBLED_NUM;
+  for (uint8_t i = 0 ; i < RGBLED_NUM ; ++i ) {
+    if (i == on) {
+      rgblight_randomrgb_at(i);
+    } else {
+      rgblight_setrgb_at(0, 0, 0, i);
+    }
+  }
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -133,6 +159,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_off(_ADJUST);
       }
       return false;
+      break;
+/*    case RGB_MODE_DISCO:
+      if (record->event.pressed) {
+        //rgblight_enable();
+        rgblight_mode(RGBLIGHT_MODE_DISCO);
+        //rgblight_disable();
+      }
+    return false;*/
+    case KC_A ... KC_SLASH:
+      if (record->event.pressed) {
+      /* if (rgblight_get_mode() == RGBLIGHT_MODE_DISCO) { */
+        rgblight_randomrgb();
+      /* } */
+      }
+      return true;
       break;
   }
   return true;
