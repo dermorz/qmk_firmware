@@ -70,7 +70,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 //
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-  [_QWERTZ] = LAYOUT_kc_ortho_4x12(
+  [_QWERTZ] = LAYOUT_kc(
   //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
      TAB , Q  , W  , E  , R  , T  ,      Y  , U  , I  , O  , P  ,BSPC,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
@@ -83,15 +83,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //
   ),
 
-  [_LOWER] = LAYOUT_kc_ortho_4x12(
+  [_LOWER] = LAYOUT_kc(
   //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
-     KITT,AT  ,EQL ,EURO,EXLM,CIRC,         ,UE  ,    ,OE  ,    ,    ,
+     KITT,AT  ,EQL ,EURO,EXLM,NUBS,         ,UE  ,    ,OE  ,    ,VOLU,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     CYCL,AE  ,SZ  ,QST ,DOT ,COL ,     LEFT,DOWN, UP ,RIGHT,   ,    ,
+     CYCL,AE  ,SZ  ,QST ,DOT ,COL ,     LEFT,DOWN, UP ,RIGHT,   ,VOLD,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     DSCO,    ,    ,    ,COMM,SEMI,         ,    ,    ,    ,    ,    ,
+     DSCO,    ,    ,    ,COMM,SEMI,         ,    ,    ,    ,    ,MUTE,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     RGB ,    ,    ,    ,    ,    ,     SPC ,    ,    ,    ,    ,
+     RGB ,    ,    ,    ,    ,    ,     UNDS,    ,    ,    ,    ,
+  //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
+  //
+  ),
+
+  [_RAISE] = LAYOUT_kc(
+  //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
+         ,    ,    ,BSLS,    ,    ,     DQOT,LCBR,RCBR,    ,    ,    ,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+         ,    ,    ,SLSH,DASH,STAR,     QUOT,LBRC,RBRC,    ,    ,    ,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+         ,    ,    ,PIPE,PLS ,    ,     BTIC,LPRN,RPRN,    ,    ,    ,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+         ,    ,    ,    ,    ,    ,         ,    ,    ,    ,    ,
   //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
   //
   ),
@@ -136,16 +149,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-    /* case RAISE: */
-    /*   if (record->event.pressed) { */
-    /*     layer_on(_RAISE); */
-    /*     update_tri_layer(_LOWER, _RAISE, _ADJUST); */
-    /*   } else { */
-    /*     layer_off(_RAISE); */
-    /*     update_tri_layer(_LOWER, _RAISE, _ADJUST); */
-    /*   } */
-    /*   return false; */
-    /*   break; */
+    case RAISE:
+      if (record->event.pressed) {
+        layer_on(_RAISE);
+        update_tri_layer(_LOWER, _RAISE, _ADJUST);
+      } else {
+        layer_off(_RAISE);
+        update_tri_layer(_LOWER, _RAISE, _ADJUST);
+      }
+      return false;
+      break;
     /* case NUM: */
     /*   if (record->event.pressed) { */
     /*     layer_on(_NUM); */
