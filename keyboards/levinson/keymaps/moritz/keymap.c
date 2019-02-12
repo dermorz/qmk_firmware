@@ -3,11 +3,13 @@
 
 extern keymap_config_t keymap_config;
 
-#define _QWERTZ 0
-#define _LOWER 1
-#define _RAISE 2
-#define _NUM 3
-#define _ADJUST 16
+enum layers {
+  _QWERTZ = 0,
+  _LOWER,
+  _RAISE,
+  _NUM,
+  _ADJUST,
+};
 
 enum custom_keycodes {
   QWERTZ = SAFE_RANGE,
