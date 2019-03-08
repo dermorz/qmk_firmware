@@ -1,7 +1,9 @@
 #include QMK_KEYBOARD_H
 #include "action_layer.h"
+#include "aliases.h"
 
 extern keymap_config_t keymap_config;
+
 
 enum layers {
   _QWERTZ = 0,
@@ -20,41 +22,6 @@ enum custom_keycodes {
   RGB_MODE_DISCO,
 };
 
-#define _______ KC_TRNS
-#define KC_ KC_TRNS
-
-// redefinitions for LAYOUT_kc
-#define KC_LESS KC_GRV // < >
-#undef KC_HASH
-#define KC_HASH KC_BSLS
-#undef KC_AT
-#define KC_AT LALT(KC_L)
-#undef KC_EQL
-#define KC_EQL LSFT(KC_0)
-#define KC_AE KC_QUOT
-#define KC_OE KC_SCLN
-#define KC_UE KC_LBRC
-#define KC_SZ KC_MINS
-#define KC_EURO LALT(KC_E)
-#define KC_QST LSFT(KC_SZ)
-#define KC_SEMI LSFT(KC_COMMA)
-#define KC_COL LSFT(KC_DOT)
-
-#define KC_SHOT LSFT(LGUI(LCTL(KC_4)))
-#define KC_SSVR LSFT(LGUI(LCTL(LALT(KC_S))))
-#define KC_SSSH TD(TD_SCREENSHOT_SCREENSAVER)
-#define KC_LOWR LOWER
-#define KC_RASE RAISE
-#define KC_NUM  NUM
-#define KC_BL_S BL_STEP
-#define KC_BL_T BL_TOGG
-#define KC_RMOD RGB_MOD
-
-#define KC_KITT RGB_MODE_KNIGHT
-#define KC_DSCO RGB_MODE_DISCO
-#define KC_CYCL RGB_MOD
-#define KC_RGB RGB_TOG
-
 //Tap Dance Declarations
 enum {
   TD_SCREENSHOT_SCREENSAVER = 0
@@ -63,53 +30,67 @@ enum {
 //Tap Dance Definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
   //Tap once for screenshot, twice to start screensaver
-  [TD_SCREENSHOT_SCREENSAVER]  = ACTION_TAP_DANCE_DOUBLE(KC_SHOT, KC_SSVR),
+  [TD_SCREENSHOT_SCREENSAVER]  = ACTION_TAP_DANCE_DOUBLE(DO_SHOT, DO_SSVR),
 };
 
 // Fillers to make layering more clear
 //
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-  [_QWERTZ] = LAYOUT_kc(
+  [_QWERTZ] = LAYOUT_do(
   //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
-     TAB , Q  , W  , E  , R  , T  ,      Y  , U  , I  , O  , P  ,BSPC,
+     TAB , Q  , W  , E  , R  , T  ,      Z  , U  , I  , O  , P  ,BSPC,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
      ESC , A  , S  , D  , F  , G  ,      H  , J  , K  , L  ,HASH,ENT,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     LSFT,LESS, Z  , X  , C  , V  ,      B  , N  , M  ,    ,NUM ,DEL ,
+     LSFT,LESS, Y  , X  , C  , V  ,      B  , N  , M  ,    ,NUM ,DEL ,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     NUM ,LCTL,LALT,LGUI,LOWR,SPC ,     SPC ,RASE,LALT,RGUI,    ,SSSH
+     NUM ,LCTL,LGUI,LALT,LOWR,SPC ,     SPC ,RASE,LALT,RGUI,    ,SSSH
   //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
   //
   ),
 
-  [_LOWER] = LAYOUT_kc(
+  [_LOWER] = LAYOUT_do(
   //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
-     KITT,AT  ,EQL ,EURO,EXLM,NUBS,         ,UE  ,    ,OE  ,    ,VOLU,
+     KITT,AT  ,EQL ,EURO,EXLM,CIRC,         ,UE  ,    ,OE  ,    ,VOLU,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     CYCL,AE  ,SZ  ,QST ,DOT ,COL ,     LEFT,DOWN, UP ,RIGHT,   ,VOLD,
+     CYCL,AE  ,SS  ,QST ,DOT ,COLN,     LEFT,DOWN, UP ,RGHT,    ,VOLD,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     DSCO,    ,    ,    ,COMM,SEMI,         ,    ,    ,    ,    ,MUTE,
+     DSCO,    ,    ,    ,COMM,SCLN,         ,    ,    ,    ,    ,MUTE,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
      RGB ,    ,    ,    ,    ,    ,     UNDS,    ,    ,    ,    ,
   //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
   //
   ),
 
-  [_RAISE] = LAYOUT_kc(
+  [_RAISE] = LAYOUT_do(
   //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
-         ,    ,    ,BSLS,    ,    ,     DQOT,LCBR,RCBR,    ,    ,    ,
+         ,    ,PERC,BSLS,    ,    ,     DQOT,LCBR,RCBR,    ,    ,    ,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-         ,    ,    ,SLSH,DASH,STAR,     QUOT,LBRC,RBRC,    ,    ,    ,
+         ,    ,DLR ,SLSH,MINS,ASTR,     QUOT,LBRC,RBRC,    ,    ,    ,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-         ,    ,    ,PIPE,PLS ,    ,     BTIC,LPRN,RPRN,    ,    ,    ,
+         ,    ,AMPR,PIPE,PLUS,    ,     GRV ,LPRN,RPRN,    ,    ,    ,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
          ,    ,    ,    ,    ,    ,         ,    ,    ,    ,    ,
   //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
   //
   ),
 
+  [_NUM] = LAYOUT_do(
+  //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
+         ,    ,    ,    ,    ,    ,         , 7  , 8  , 9  ,    ,    ,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+         ,    ,    ,    ,    ,    ,         , 4  , 5  , 6  ,    ,    ,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+         ,    ,    ,    ,    ,    ,         , 1  , 2  , 3  ,    ,    ,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+         ,    ,    ,    ,    ,    ,         , 0  ,    ,    ,    ,
+  //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
+  //
+  ),
 };
+
+static uint8_t led_states[RGBLED_NUM] = {};
 
 void rgblight_randomrgb_at(uint8_t index) {
   uint8_t r, g, b;
@@ -159,14 +140,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-    /* case NUM: */
-    /*   if (record->event.pressed) { */
-    /*     layer_on(_NUM); */
-    /*   } else { */
-    /*     layer_off(_NUM); */
-    /*   } */
-    /*   return false; */
-    /*   break; */
+    case NUM:
+      if (record->event.pressed) {
+        layer_on(_NUM);
+      } else {
+        layer_off(_NUM);
+      }
+      return false;
+      break;
     /* case ADJUST: */
     /*   if (record->event.pressed) { */
     /*     layer_on(_ADJUST); */
