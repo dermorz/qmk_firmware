@@ -45,6 +45,7 @@
 #define DO_LOWR LOWER
 #define DO_RASE RAISE
 #define DO_NUM  NUM
+#define DO_NSPC LT(_NUM, DO_SPC)
 
 /* Lighting */
 #define DO_BL_S BL_STEP
