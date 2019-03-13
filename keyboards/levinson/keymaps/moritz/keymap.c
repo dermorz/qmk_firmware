@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
-static uint8_t led_states[RGBLED_NUM] = {};
+// static uint8_t led_states[RGBLED_NUM] = {};
 
 void rgblight_randomrgb_at(uint8_t index) {
   uint8_t r, g, b;
