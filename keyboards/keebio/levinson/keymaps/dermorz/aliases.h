@@ -116,6 +116,8 @@
 #define DO_BSPC KC_BSPC
 #define DO_DEL  KC_DEL
 #define DO_ENT  KC_ENT
+#define DO_PGUP KC_PGUP
+#define DO_PGDN KC_PGDN
 
 #define DO_VOLU KC_VOLU
 #define DO_VOLD KC_VOLD

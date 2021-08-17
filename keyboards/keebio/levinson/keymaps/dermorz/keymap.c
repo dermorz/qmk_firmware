@@ -41,11 +41,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT_do(
   //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
-     KITT,AT  ,EQL ,EURO,EXLM,CIRC,         ,UE  ,    ,OE  ,    ,VOLU,
+     KITT,AT  ,EQL ,EURO,EXLM,CIRC,         ,UE  ,    ,OE  ,PGUP,VOLU,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     CYCL,AE  ,SS  ,QST ,DOT ,COLN,     LEFT,DOWN, UP ,RGHT,    ,VOLD,
+     CYCL,AE  ,SS  ,QST ,DOT ,COLN,     LEFT,DOWN, UP ,RGHT,PGDN,VOLD,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     PLAI,    ,    ,    ,COMM,SCLN,         ,    ,    ,    ,    ,MUTE,
+     PLAI,    ,    ,    ,COMM,SCLN,         ,TILD,    ,    ,    ,MUTE,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
      RGB ,    ,    ,    ,    ,    ,     UNDS,    ,    ,    ,    ,
   //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
