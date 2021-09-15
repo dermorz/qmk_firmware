@@ -79,28 +79,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
-// static uint8_t led_states[RGBLED_NUM] = {};
-
-void rgblight_randomrgb_at(uint8_t index) {
-  uint8_t r, g, b;
-  r = random() % 0xFF;
-  g = random() % 0xFF;
-  b = random() % 0xFF;
-  rgblight_setrgb_at(r, g, b, index);
-};
-
-void rgblight_randomrgb(void) {
-  uint8_t on;
-  on = random() % RGBLED_NUM;
-  for (uint8_t i = 0 ; i < RGBLED_NUM ; ++i ) {
-    if (i == on) {
-      rgblight_randomrgb_at(i);
-    } else {
-      rgblight_setrgb_at(0, 0, 0, i);
-    }
-  }
-};
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case QWERTZ:
@@ -136,29 +114,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_off(_NUM);
       }
       return false;
-      break;
-      /* case ADJUST: */
-      /*   if (record->event.pressed) { */
-      /*     layer_on(_ADJUST); */
-      /*   } else { */
-      /*     layer_off(_ADJUST); */
-      /*   } */
-      /*   return false; */
-      /*   break; */
-      /* case RGB_MODE_DISCO: */
-      /*   if (record->event.pressed) { */
-      /*     //rgblight_enable(); */
-      /*     rgblight_mode(RGBLIGHT_MODE_DISCO); */
-      /*     //rgblight_disable(); */
-      /*   } */
-      return false;
-    case KC_A ... KC_SLASH:
-      if (record->event.pressed) {
-        /* if (rgblight_get_mode() == RGBLIGHT_MODE_DISCO) { */
-        rgblight_randomrgb();
-        /* } */
-      }
-      return true;
       break;
   }
   return true;
