@@ -143,3 +143,6 @@
 #define DO_PLAI RGB_MODE_PLAIN
 #define DO_CYCL RGB_MOD
 #define DO_RGB  RGB_TOG
+
+/* Unicode */
+#define DO_TM UC(0x2122)
