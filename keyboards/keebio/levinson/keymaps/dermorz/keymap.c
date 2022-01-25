@@ -11,6 +11,7 @@ enum layers {
   _RAISE,
   _NUM,
   _ADJUST,
+  _SC2,
 };
 
 enum custom_keycodes {
@@ -19,7 +20,7 @@ enum custom_keycodes {
   RAISE,
   NUM,
   ADJUST,
-  RGB_MODE_DISCO,
+  SC2,
 };
 
 // Fillers to make layering more clear
@@ -32,22 +33,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
      ESC , A  , S  , D  , F  , G  ,      H  , J  , K  , L  ,HASH,ENT,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     LSFT,LESS, Y  , X  , C  , V  ,      B  , N  , M  ,    ,NUM ,DEL ,
+     LSFT,LESS, Y  , X  , C  , V  ,      B  , N  , M  ,    ,    ,DEL ,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     NUM ,LCTL,LGUI,LALT,LOWR,SPC ,     NSPC,RASE,RALT,RGUI,    ,
+     NUM ,LCTL,LGUI,LALT,LOWR,SPC ,     NSPC,RASE,RALT,RGUI,    ,PRNT
   //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
   //
   ),
 
   [_LOWER] = LAYOUT_do(
   //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
-     KITT,AT  ,EQL ,EURO,EXLM,CIRC,         ,UE  ,    ,OE  ,PGUP,VOLU,
+         ,AT  ,EQL ,EURO,EXLM,CIRC,         ,UE  ,    ,OE  ,PGUP,VOLU,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     CYCL,AE  ,SS  ,QST ,DOT ,COLN,     LEFT,DOWN, UP ,RGHT,PGDN,VOLD,
+         ,AE  ,SS  ,QST ,DOT ,COLN,     LEFT,DOWN, UP ,RGHT,PGDN,VOLD,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     PLAI,    ,    ,    ,COMM,SCLN,         ,TILD,    ,    ,    ,MUTE,
+         ,    ,    ,    ,COMM,SCLN,         ,TILD,    ,    ,    ,MUTE,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     RGB ,    ,    ,    ,    ,    ,     UNDS,    ,    ,    ,    ,
+         ,    ,    ,    ,    ,    ,     UNDS,    ,    ,    ,    ,
   //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
   //
   ),
@@ -77,6 +78,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
   //
   ),
+
+  [_SC2] = LAYOUT_do(
+  //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
+     TAB , Q  , W  , E  , R  , T  ,      Z  , U  , I  , O  , P  ,BSPC,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+     ESC , A  , S  , D  , F  , G  ,      H  , J  , K  , L  ,HASH,ENT,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+     LSFT, Y  , X  , C  , V  , B  ,      N  , M  ,DOT ,COMM,    ,DEL ,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+     LCTL,LCTL,LGUI,LALT,4   ,SPC ,     NSPC,RASE,RALT,RGUI,    ,QWRZ
+  //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
+  //
+  ),
+
+  [_ADJUST] = LAYOUT_do(
+  //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
+         ,QWRZ,    ,    ,    ,    ,         ,    ,    ,    ,    ,    ,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+         ,    ,SC2 ,    ,    ,    ,         ,    ,    ,    ,    ,    ,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+         ,    ,    ,    ,    ,    ,         ,    ,    ,    ,    ,    ,
+  //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
+         ,    ,    ,    ,    ,    ,         ,    ,    ,    ,    ,
+  //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
+  //
+  ),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -84,6 +111,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case QWERTZ:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_QWERTZ);
+      }
+      return false;
+      break;
+    case SC2:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_SC2);
       }
       return false;
       break;

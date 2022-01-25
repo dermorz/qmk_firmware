@@ -57,14 +57,17 @@
 #define DO_8 KC_8
 #define DO_9 KC_9
 
+// interpunction
 #define DO_DOT  KC_DOT  // .
 #define DO_COMM KC_COMM // ,
 
+// German letters
 #define DO_SS KC_MINS   // ß
 #define DO_AE KC_QUOT   // ä
 #define DO_UE KC_LBRC   // ü
 #define DO_OE KC_SCLN   // ö
 
+// special characters
 #define DO_CIRC KC_GRV // accent circumflex ^ and ring °
 #define DO_ACUT KC_EQL  // accent acute ´ and grave `
 #define DO_PLUS KC_RBRC // + and * and ~
@@ -118,6 +121,7 @@
 #define DO_ENT  KC_ENT
 #define DO_PGUP KC_PGUP
 #define DO_PGDN KC_PGDN
+#define DO_PRNT KC_PSCR
 
 #define DO_VOLU KC_VOLU
 #define DO_VOLD KC_VOLD
@@ -128,21 +132,17 @@
 #define DO_UP   KC_UP
 #define DO_RGHT KC_RIGHT
 
+// special keycodes
+#define DO_RST RESET
+
+/* Custom keycodes */
+#define DO_QWRZ QWERTZ
 #define DO_LOWR LOWER
 #define DO_RASE RAISE
 #define DO_NUM  NUM
+#define DO_ADJ  ADJUST
+#define DO_SC2  SC2
 #define DO_NSPC LT(_NUM, DO_SPC)
-
-/* Lighting */
-#define DO_BL_S BL_STEP
-#define DO_BL_T BL_TOGG
-#define DO_RMOD RGB_MOD
-
-#define DO_KITT RGB_MODE_KNIGHT
-#define DO_DSCO RGB_MODE_DISCO
-#define DO_PLAI RGB_MODE_PLAIN
-#define DO_CYCL RGB_MOD
-#define DO_RGB  RGB_TOG
 
 /* Unicode */
 #define DO_TM UC(0x2122)
