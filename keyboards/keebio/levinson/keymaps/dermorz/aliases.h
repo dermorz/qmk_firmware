@@ -135,6 +135,12 @@
 // special keycodes
 #define DO_RST RESET
 
+// mouse
+#define DO_MS_U KC_MS_UP
+#define DO_MS_D KC_MS_DOWN
+#define DO_MS_L KC_MS_LEFT
+#define DO_MS_R KC_MS_RIGHT
+
 /* Custom keycodes */
 #define DO_QWRZ QWERTZ
 #define DO_LOWR LOWER
@@ -143,6 +149,4 @@
 #define DO_ADJ  ADJUST
 #define DO_SC2  SC2
 #define DO_NSPC LT(_NUM, DO_SPC)
-
-/* Unicode */
-#define DO_TM UC(0x2122)
+#define DO_MSPC LT(_MOUSE, DO_SPC)
