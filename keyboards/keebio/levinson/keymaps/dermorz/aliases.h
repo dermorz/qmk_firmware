@@ -1,4 +1,3 @@
-#define _______ KC_TRNS
 #define DO_ KC_TRNS
 
 // Used to create a keymap using only DO_ prefixed keys
