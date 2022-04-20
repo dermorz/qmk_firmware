@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
      LSFT, Y  , X  , C  , V  , B  ,      N  , M  ,DOT ,COMM,    ,DEL ,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     LCTL,LCTL,LGUI,LALT,4   ,SPC ,     NSPC,RASE,RALT,RGUI,    ,QWRZ
+     LCTL,LCS ,LGUI,LALT,4   ,SPC ,     NSPC,RASE,RALT,RGUI,    ,QWRZ
   //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
   //
   ),

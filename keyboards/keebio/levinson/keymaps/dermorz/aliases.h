@@ -121,6 +121,7 @@
 #define DO_PGUP KC_PGUP
 #define DO_PGDN KC_PGDN
 #define DO_PRNT KC_PSCR
+#define DO_LCS  S(KC_LCTL)
 
 #define DO_VOLU KC_VOLU
 #define DO_VOLD KC_VOLD
