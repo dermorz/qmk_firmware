@@ -51,3 +51,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_ACCELERATED_SPEED 400
 #define MOUSEKEY_MAX_SPEED 3
 #define MOUSEKEY_TIME_TO_MAX 50
+
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
