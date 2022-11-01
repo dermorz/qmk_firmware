@@ -23,6 +23,8 @@ enum custom_keycodes {
   ADJUST,
   SC2,
   MOUSE,
+  GLHF,
+  GG,
 };
 
 // Fillers to make layering more clear
@@ -87,9 +89,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
      ESC , A  , S  , D  , F  , G  ,      H  , J  , K  , L  ,HASH,ENT,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     LSFT, Y  , X  , C  , V  , B  ,      N  , M  ,DOT ,COMM,    ,DEL ,
+     LSFT, Y  , X  , C  , V  , B  ,      N  , M  ,DOT ,COMM,GLHF,DEL ,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
-     LCTL,LCS ,LGUI,LALT,4   ,SPC ,     NSPC,RASE,RALT,RGUI,    ,QWRZ
+     LCTL,LCS ,LGUI,LALT,4   ,SPC ,     NSPC,RASE,RALT,RGUI,GG  ,QWRZ
   //└────┴────┴────┴────┴────┴────┘    └────┴────┴────┴────┴────┴────┘
   //
   ),
@@ -163,6 +165,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
+    case GLHF:
+      if (record->event.pressed) {
+          SEND_STRING("\n*glhf(\n");
+      }
+      return false;
+    case GG:
+      if (record->event.pressed) {
+          SEND_STRING("\n*gg(\n" SS_TAP(X_F10) "w" );
+      }
+      return false;
   }
   return true;
 }

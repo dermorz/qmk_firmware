@@ -162,5 +162,7 @@
 #define DO_NUM  NUM
 #define DO_ADJ  ADJUST
 #define DO_SC2  SC2
+#define DO_GLHF GLHF
+#define DO_GG   GG
 #define DO_NSPC LT(_NUM, DO_SPC)
 #define DO_MSPC LT(_MOUSE, DO_SPC)
