@@ -167,12 +167,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case GLHF:
       if (record->event.pressed) {
-          SEND_STRING("\n*glhf(\n");
+          SEND_STRING("\nglhf\n");
       }
       return false;
     case GG:
       if (record->event.pressed) {
-          SEND_STRING("\n*gg(\n" SS_TAP(X_F10) "w" );
+          SEND_STRING("\ngg\n" SS_TAP(X_F10) "w" );
       }
       return false;
   }
