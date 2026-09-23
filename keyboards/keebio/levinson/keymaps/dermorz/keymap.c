@@ -119,7 +119,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
+// The keymap is written for German layout on Linux. On macOS these keycodes
+// produce different characters, so they get swapped for the mac equivalent.
+static const uint16_t mac_swaps[][2] = {
+  // Linux                 macOS
+  {KC_GRV,                 KC_NUBS},              // ^ (mac swaps these two on ISO)
+  {KC_NUBS,                KC_GRV},               // <
+  {S(KC_GRV),              S(KC_NUBS)},           // °
+  {S(KC_NUBS),             S(KC_GRV)},            // >
+  {ALGR(KC_7),             A(KC_8)},              // {
+  {ALGR(KC_8),             A(KC_5)},              // [
+  {ALGR(KC_9),             A(KC_6)},              // ]
+  {ALGR(KC_0),             A(KC_9)},              // }
+  {ALGR(KC_MINS),          A(S(KC_7))},           // backslash
+  {ALGR(KC_Q),             A(KC_L)},              // @
+  {ALGR(KC_RBRC),          A(KC_N)},              // ~
+  {ALGR(KC_NUBS),          A(KC_7)},              // |
+  {KC_PSCR,                S(G(C(KC_4)))},        // screenshot to clipboard
+};
+
+static bool on_mac(void) {
+  os_variant_t os = detected_host_os();
+  return os == OS_MACOS || os == OS_IOS;
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (on_mac()) {
+    for (uint8_t i = 0; i < ARRAY_SIZE(mac_swaps); i++) {
+      if (keycode == mac_swaps[i][0]) {
+        if (record->event.pressed) {
+          register_code16(mac_swaps[i][1]);
+        } else {
+          unregister_code16(mac_swaps[i][1]);
+        }
+        return false;
+      }
+    }
+  }
+
   switch (keycode) {
     case QWERTZ:
       if (record->event.pressed) {

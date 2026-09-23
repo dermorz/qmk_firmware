@@ -23,6 +23,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define MASTER_LEFT
 
+// KVM keeps USB powered while switching; reset so the OS gets re-detected
+#define OS_DETECTION_KEYBOARD_RESET
+
 /* mouse settings */
 #define MK_KINECTIC_SPEED
 #define MOUSEKEY_DEPLAY 8
