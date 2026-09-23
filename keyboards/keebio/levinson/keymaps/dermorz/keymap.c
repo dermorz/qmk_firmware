@@ -1,9 +1,5 @@
 #include QMK_KEYBOARD_H
-#include "action_layer.h"
 #include "aliases.h"
-
-extern keymap_config_t keymap_config;
-
 
 enum layers {
   _QWERTZ = 0,

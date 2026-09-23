@@ -21,24 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-/* Use I2C or Serial, not both */
-
-#define USE_SERIAL
-// #define USE_I2C
-
-/* Select hand configuration */
-
 #define MASTER_LEFT
-// #define MASTER_RIGHT
-// #define EE_HANDS
-
-#define RGBLED_NUM 12
-
-// #define RGBLIGHT_ANIMATIONS
-// #define RGBLIGHT_EFFECT_KNIGHT_LED_NUM 12  // How many LEDs to travel
-// #define RGBLIGHT_EFFECT_KNIGHT_LENGTH 3   // How many LEDs wide to light up
-
-#define UNICODE_SELECTED_MODES UC_LNX
 
 /* mouse settings */
 #define MK_KINECTIC_SPEED
