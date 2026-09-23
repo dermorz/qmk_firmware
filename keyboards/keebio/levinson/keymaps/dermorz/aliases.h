@@ -149,12 +149,6 @@
 // special keycodes
 #define DO_RST QK_BOOT
 
-// mouse
-#define DO_MS_U MS_UP
-#define DO_MS_D MS_DOWN
-#define DO_MS_L MS_LEFT
-#define DO_MS_R MS_RGHT
-
 /* Custom keycodes */
 #define DO_QWRZ QWERTZ
 #define DO_LOWR LOWER
@@ -165,4 +159,3 @@
 #define DO_GLHF GLHF
 #define DO_GG   GG
 #define DO_NSPC LT(_NUM, DO_SPC)
-#define DO_MSPC LT(_MOUSE, DO_SPC)
