@@ -108,10 +108,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // produce different characters, so they get swapped for the mac equivalent.
 static const uint16_t mac_swaps[][2] = {
   // Linux                 macOS
-  {KC_GRV,                 KC_NUBS},              // ^ (mac swaps these two on ISO)
-  {KC_NUBS,                KC_GRV},               // <
-  {S(KC_GRV),              S(KC_NUBS)},           // °
-  {S(KC_NUBS),             S(KC_GRV)},            // >
   {ALGR(KC_7),             A(KC_8)},              // {
   {ALGR(KC_8),             A(KC_5)},              // [
   {ALGR(KC_9),             A(KC_6)},              // ]
