@@ -1,3 +1,4 @@
+BOOTLOADER = atmel-dfu  # Elite-C, not the Pro Micro default
 MOUSEKEY_ENABLE = no
 CAPS_WORD_ENABLE = yes
 SEND_STRING_ENABLE = yes
