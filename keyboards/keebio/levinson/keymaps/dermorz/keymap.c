@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_RAISE] = LAYOUT_do(
   //┌────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬────┐
-         ,    ,PERC,BSLS,    ,    ,     DQOT,LCBR,RCBR,    ,    ,    ,
+         ,    ,PERC,BSLS,PARA,RING,     DQOT,LCBR,RCBR,    ,    ,    ,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
          ,    ,DLR ,SLSH,MINS,ASTR,     QUOT,LBRC,RBRC,    ,    ,    ,
   //├────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼────┤
