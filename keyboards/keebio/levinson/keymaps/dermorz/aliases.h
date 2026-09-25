@@ -147,13 +147,7 @@
 #define DO_RGHT KC_RIGHT
 
 // special keycodes
-#define DO_RST RESET
-
-// mouse
-#define DO_MS_U KC_MS_UP
-#define DO_MS_D KC_MS_DOWN
-#define DO_MS_L KC_MS_LEFT
-#define DO_MS_R KC_MS_RIGHT
+#define DO_RST QK_BOOT
 
 /* Custom keycodes */
 #define DO_QWRZ QWERTZ
@@ -165,4 +159,3 @@
 #define DO_GLHF GLHF
 #define DO_GG   GG
 #define DO_NSPC LT(_NUM, DO_SPC)
-#define DO_MSPC LT(_MOUSE, DO_SPC)

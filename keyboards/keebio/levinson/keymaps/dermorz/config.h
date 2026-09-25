@@ -21,35 +21,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-/* Use I2C or Serial, not both */
-
-#define USE_SERIAL
-// #define USE_I2C
-
-/* Select hand configuration */
-
 #define MASTER_LEFT
-// #define MASTER_RIGHT
-// #define EE_HANDS
 
-#define RGBLED_NUM 12
-
-// #define RGBLIGHT_ANIMATIONS
-// #define RGBLIGHT_EFFECT_KNIGHT_LED_NUM 12  // How many LEDs to travel
-// #define RGBLIGHT_EFFECT_KNIGHT_LENGTH 3   // How many LEDs wide to light up
-
-#define UNICODE_SELECTED_MODES UC_LNX
-
-/* mouse settings */
-#define MK_KINECTIC_SPEED
-#define MOUSEKEY_DEPLAY 8
-#define MOUSEKEY_INTERVAL 8
-#define MOUSEKEY_MOVE_DELTA 25
-#define MOUSEKEY_INITIAL_SPEED 100
-#define MOUSEKEY_BASE_SPEED 1000
-#define MOUSEKEY_DECELERATED_SPEED 400
-#define MOUSEKEY_ACCELERATED_SPEED 400
-#define MOUSEKEY_MAX_SPEED 3
-#define MOUSEKEY_TIME_TO_MAX 50
+// KVM keeps USB powered while switching; reset so the OS gets re-detected
+#define OS_DETECTION_KEYBOARD_RESET
 
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
